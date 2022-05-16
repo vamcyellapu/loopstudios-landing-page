@@ -1,0 +1,50 @@
+$white-color: #fff;
+$black-color: #000;
+$dark-grey: #8c8c8c;
+$very-dark-grey: hsl(0, 0%, 41%);
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: 'Alata', sans-serif;
+  font-size: 1.5rem;
+  color: $very-dark-grey;
+  line-height: 1.7;
+  display: flex;
+  min-height: 100vh;
+  justify-content: center;
+  align-items: center;
+  font-weight: 400;
+}
+
+h1,
+h2 {
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 3.5rem;
+}
+
+.btn {
+  text-transform: uppercase;
+  padding: 1rem 4rem;
+  letter-spacing: 2px;
+  font-family: 'Alata', sans-serif;
+  background: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  cursor: pointer;
+  transition: all 0.2s ease-out;
+  &:hover {
+    background-color: $black-color;
+    color: $white-color;
+  }
+}
