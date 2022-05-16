@@ -48,3 +48,21 @@ h2 {
     color: $white-color;
   }
 }
+
+.icons {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.icon-container {
+  border-bottom: 2px solid $black-color;
+  cursor: pointer;
+  transition: border 0.2s;
+  &:hover {
+    border-bottom: 2px solid $white-color;
+  }
+  .icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+}
