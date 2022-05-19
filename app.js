@@ -1,19 +1,18 @@
 'use strict';
 
 const creationsContainer = document.querySelector('.creations-container');
-const creationsHeader = document.querySelector('.creations-header');
+const creationsHeader = document.querySelector('.creations__header');
 const btn = document.querySelector('.btn');
-console.log(creationsContainer);
+
 const resize = function () {
   let width = window.window.innerWidth;
-  console.log(width);
+
   if (width < 768) {
     creationsContainer.append(btn);
   } else {
     creationsHeader.append(btn);
   }
 };
-
 resize();
 window.addEventListener('resize', resize);
 
