@@ -298,6 +298,7 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  position: relative;
 }
 
 .hero-container {
@@ -305,6 +306,7 @@ h2 {
   margin: 0 auto;
   position: relative;
   min-height: 100vh;
+  padding: 2rem;
 }
 
 .hero__heading {
@@ -321,11 +323,13 @@ h2 {
   padding: 2rem;
   max-width: 30rem;
   padding-top: 2.5rem;
+  z-index: 1;
 }
 
 @media screen and (min-width: 768px) {
   .hero {
-    background-image: url(/images/desktop/image-hero.jpg);
+    background-image: -webkit-gradient(linear, left top, right top, from(rgba(0, 0, 0, 0.5)), to(rgba(0, 0, 0, 0.5))), url(/images/desktop/image-hero.jpg);
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(/images/desktop/image-hero.jpg);
   }
   .hero__heading {
     bottom: 20%;
@@ -336,6 +340,129 @@ h2 {
     max-width: 65rem;
     padding: 3rem;
     padding-top: 4rem;
+    margin-left: 2rem;
+  }
+}
+
+.navigation {
+  margin-top: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 2rem;
+}
+
+.navigation__list {
+  position: absolute;
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1.5rem;
+  font-family: 'Josefin Sans', sans-serif;
+  font-size: 2rem;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #000;
+  padding-top: 20rem;
+  padding-left: 2rem;
+}
+
+.navigation__list a {
+  text-decoration: none;
+  color: #fff;
+  padding: 1rem;
+  text-transform: uppercase;
+  -webkit-transition: color 0.2s;
+  transition: color 0.2s;
+  outline: none;
+  position: relative;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.navigation__list a:hover {
+  color: #8c8c8c;
+}
+
+.navigation .logo {
+  width: 19rem;
+  height: 3rem;
+  cursor: pointer;
+  z-index: 999;
+}
+
+.navigation .menu-icon {
+  width: 3rem;
+  height: 3rem;
+  cursor: pointer;
+  fill: #fff;
+  -webkit-transition: fill 0.2s;
+  transition: fill 0.2s;
+  z-index: 999;
+}
+
+.navigation .menu-icon:hover {
+  fill: #8c8c8c;
+}
+
+.list-horizontal {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.display {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .navigation__list {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    position: static;
+    background: none;
+    padding: 0;
+  }
+  .navigation__list a {
+    font-size: 1.6rem;
+    text-transform: none;
+    font-weight: 600;
+  }
+  .navigation__list a:hover:after {
+    content: '';
+    position: absolute;
+    background-color: #fff;
+    height: 2px;
+    width: 35%;
+    left: 50%;
+    bottom: -0.3rem;
+    -webkit-transform: translateX(-50%);
+            transform: translateX(-50%);
+  }
+  .navigation__list a:hover {
+    color: #fff;
+  }
+  .navigation .menu-icon {
+    display: none;
   }
 }
 /*# sourceMappingURL=styles.css.map */

@@ -257,11 +257,13 @@ h2 {
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 100vh;
+  position: relative;
   &-container {
     max-width: 1120px;
     margin: 0 auto;
     position: relative;
     min-height: 100vh;
+    padding: 2rem;
   }
   &__heading {
     text-transform: uppercase;
@@ -280,12 +282,19 @@ h2 {
     padding: 2rem;
     max-width: 30rem;
     padding-top: 2.5rem;
+    z-index: 1;
   }
 }
 
 @media screen and (min-width: 768px) {
   .hero {
-    background-image: url(/images/desktop/image-hero.jpg);
+    background-image: linear-gradient(
+        to right,
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.5)
+      ),
+      url(/images/desktop/image-hero.jpg);
+
     &__heading {
       bottom: 20%;
       left: 0;
@@ -294,6 +303,108 @@ h2 {
       max-width: 65rem;
       padding: 3rem;
       padding-top: 4rem;
+      margin-left: 2rem;
+    }
+  }
+}
+
+.navigation {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+
+  align-items: center;
+  gap: 2rem;
+
+  &__list {
+    position: absolute;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    // justify-content: center;
+    // align-items: center;
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 2rem;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: $black-color;
+    padding-top: 20rem;
+    padding-left: 2rem;
+
+    a {
+      text-decoration: none;
+      color: $white-color;
+      padding: 1rem;
+      text-transform: uppercase;
+      transition: color 0.2s;
+      outline: none;
+      position: relative;
+      transition: all 0.2s;
+
+      &:hover {
+        color: $dark-grey;
+      }
+    }
+  }
+  .logo {
+    width: 19rem;
+    height: 3rem;
+    cursor: pointer;
+    z-index: 999;
+  }
+  .menu-icon {
+    width: 3rem;
+    height: 3rem;
+    cursor: pointer;
+    fill: $white-color;
+    transition: fill 0.2s;
+    z-index: 999;
+
+    &:hover {
+      fill: $dark-grey;
+    }
+  }
+}
+
+.list-horizontal {
+  flex-direction: row;
+}
+
+.display {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .navigation {
+    &__list {
+      flex-direction: row;
+      display: flex;
+      position: static;
+      background: none;
+      padding: 0;
+      a {
+        font-size: 1.6rem;
+        text-transform: none;
+        font-weight: 600;
+        &:hover:after {
+          content: '';
+          position: absolute;
+          background-color: $white-color;
+          height: 2px;
+          width: 35%;
+          left: 50%;
+          bottom: -0.3rem;
+          transform: translateX(-50%);
+        }
+        &:hover {
+          color: $white-color;
+        }
+      }
+    }
+    .menu-icon {
+      display: none;
     }
   }
 }

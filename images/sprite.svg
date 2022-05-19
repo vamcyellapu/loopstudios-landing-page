@@ -1,6 +1,6 @@
 <svg width="0" height="0" class="hidden">
   <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 16" id="icon-hamburger">
-    <g fill="#FFF" fill-rule="evenodd">
+    <g  fill-rule="evenodd">
       <path d="M0 0h24v2H0zM0 7h24v2H0zM0 14h24v2H0z"></path>
     </g>
   </symbol>
