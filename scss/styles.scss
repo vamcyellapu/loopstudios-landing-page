@@ -408,3 +408,59 @@ h2 {
     }
   }
 }
+
+.footer {
+  background: $black-color;
+  &-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+  }
+  .navigation {
+    margin-top: 0;
+    flex-direction: column;
+    &__list {
+      display: flex;
+      padding: 0;
+      position: static;
+      align-items: center;
+      a {
+        text-transform: none;
+        font-weight: 500;
+      }
+    }
+    .logo {
+      width: 13rem;
+    }
+  }
+  .social {
+    margin-top: 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .footer {
+    &-container {
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .social {
+      margin-top: 0;
+      align-items: flex-end;
+    }
+    .navigation {
+      align-items: flex-start;
+      a {
+        padding: 0;
+      }
+    }
+  }
+}
