@@ -218,4 +218,76 @@ h2 {
        object-fit: cover;
   }
 }
+
+.vr {
+  max-width: 1120px;
+  display: -ms-grid;
+  display: grid;
+  margin: 0 auto;
+  place-items: center;
+  -ms-grid-columns: 1fr;
+      grid-template-columns: 1fr;
+  padding: 2rem;
+  gap: 5rem;
+}
+
+.vr__head {
+  width: 100%;
+}
+
+.vr__head .image {
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+}
+
+.vr__body {
+  text-align: center;
+  padding: 1rem;
+}
+
+.vr__heading {
+  text-transform: uppercase;
+  line-height: 1;
+  color: #000;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  font-size: 3.2rem;
+}
+
+.vr__text {
+  line-height: 1.8;
+}
+
+@media screen and (min-width: 992px) {
+  .vr {
+    -ms-grid-columns: minmax(200px, 600px) 1fr;
+        grid-template-columns: minmax(200px, 600px) 1fr;
+    position: relative;
+  }
+  .vr__body {
+    -ms-flex-item-align: end;
+        -ms-grid-row-align: end;
+        align-self: end;
+    text-align: left;
+    padding: 6rem;
+    padding-bottom: 0;
+    position: absolute;
+    right: 30%;
+    -webkit-transform: translateX(50%);
+            transform: translateX(50%);
+    margin-bottom: 2rem;
+    background-color: #fff;
+  }
+  .vr__heading {
+    max-width: 20ch;
+    letter-spacing: 2px;
+    font-size: 4rem;
+    font-weight: 400;
+  }
+  .vr__text {
+    max-width: 45ch;
+  }
+}
 /*# sourceMappingURL=styles.css.map */

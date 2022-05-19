@@ -187,128 +187,65 @@ h2 {
   }
 }
 
-// .creations-container {
-//   display: grid;
-//   grid-template-columns: 1fr;
-//   justify-items: center;
-//   gap: 3rem;
-// }
-// .creation1 {
-//   background-image: url(/images/mobile/image-deep-earth.jpg);
-// }
-// .creation2 {
-//   background-image: linear-gradient(
-//       to right,
-//       rgba(0, 0, 0, 0.719),
-//       rgba(0, 0, 0, 0)
-//     ),
-//     url('/images/mobile/image-night-arcade.jpg');
-// }
-// .creation3 {
-//   background-image: linear-gradient(
-//       to right,
-//       rgba(0, 0, 0, 0.719),
-//       rgba(0, 0, 0, 0)
-//     ),
-//     url('/images/mobile/image-soccer-team.jpg');
-// }
-// .creation4 {
-//   background-image: linear-gradient(
-//       to right,
-//       rgba(0, 0, 0, 0.719),
-//       rgba(0, 0, 0, 0)
-//     ),
-//     url('/images/mobile/image-grid.jpg');
-// }
-// .creation5 {
-//   background-image: linear-gradient(
-//       to right,
-//       rgba(0, 0, 0, 0.719),
-//       rgba(0, 0, 0, 0)
-//     ),
-//     url('/images/mobile/image-from-above.jpg');
-// }
-// .creation6 {
-//   background-image: linear-gradient(
-//       to right,
-//       rgba(0, 0, 0, 0.719),
-//       rgba(0, 0, 0, 0)
-//     ),
-//     url('/images/mobile/image-pocket-borealis.jpg');
-// }
-// .creation7 {
-//   background-image: linear-gradient(
-//       to right,
-//       rgba(0, 0, 0, 0.719),
-//       rgba(0, 0, 0, 0)
-//     ),
-//     url('/images/mobile/image-curiosity.jpg');
-// }
-// .creation8 {
-//   background-image: linear-gradient(
-//       to right,
-//       rgba(0, 0, 0, 0.719),
-//       rgba(0, 0, 0, 0)
-//     ),
-//     url('/images/mobile/image-fisheye.jpg');
-// }
-// .creation {
-//   background-repeat: no-repeat;
-//   background-size: cover;
-//   background-position: bottom;
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: flex-end;
-//   padding: 3rem 3.5rem;
+.vr {
+  max-width: 1120px;
+  display: grid;
+  margin: 0 auto;
+  place-items: center;
+  grid-template-columns: 1fr;
+  padding: 2rem;
+  gap: 5rem;
+  &__head {
+    width: 100%;
+    .image {
+      width: 100%;
+      object-fit: cover;
+      display: block;
+    }
+  }
+  &__body {
+    text-align: center;
+    padding: 1rem;
+  }
+  &__heading {
+    text-transform: uppercase;
+    line-height: 1;
+    color: $black-color;
+    margin-bottom: 2rem;
+    font-weight: 600;
+    font-size: 3.2rem;
+  }
+  &__text {
+    line-height: 1.8;
+  }
+}
 
-//   cursor: pointer;
-//   color: $white-color;
+@media screen and (min-width: 992px) {
+  .vr {
+    grid-template-columns: minmax(200px, 600px) 1fr;
+    position: relative;
+    &__body {
+      align-self: end;
+      text-align: left;
+      padding: 6rem;
+      padding-bottom: 0;
 
-//   &__title {
-//     text-transform: uppercase;
+      position: absolute;
+      right: 30%;
 
-//     font-family: 'Josefin Sans', sans-serif;
-//     display: block;
-//     line-height: 1;
-//     font-size: 3rem;
-//   }
-// }
+      transform: translateX(50%);
+      margin-bottom: 2rem;
+      background-color: $white-color;
+    }
+    &__heading {
+      max-width: 20ch;
 
-// .container {
-//   position: relative;
-//   cursor: pointer;
-
-//   .image {
-//     width: 100%;
-//     height: 100%;
-//     background-image: url(/images/mobile/image-fisheye.jpg);
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     background-position: top;
-//   }
-//   .text {
-//     text-transform: uppercase;
-//     font-family: 'Josefin Sans', sans-serif;
-//     display: block;
-//     line-height: 1;
-//     font-size: 3rem;
-//     color: $white-color;
-//     bottom: 3rem;
-//     left: 3rem;
-//     position: absolute;
-//     span {
-//       display: block;
-//     }
-//   }
-//   &:hover .image {
-//     background-image: linear-gradient(
-//         to right,
-//         rgba(255, 255, 255, 0.5),
-//         rgba(255, 255, 255, 0.5)
-//       ),
-//       url(/images/mobile/image-fisheye.jpg);
-//   }
-//   &:hover .text {
-//     color: $black-color;
-//   }
-// }
+      letter-spacing: 2px;
+      font-size: 4rem;
+      font-weight: 400;
+    }
+    &__text {
+      max-width: 45ch;
+    }
+  }
+}
