@@ -27,6 +27,7 @@ h2 {
 }
 
 .btn {
+  white-space: nowrap;
   text-transform: uppercase;
   padding: 1rem 4rem;
   letter-spacing: 2px;
@@ -67,13 +68,52 @@ h2 {
   height: 2.5rem;
 }
 
+.creations {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 4rem;
+  position: relative;
+  margin-bottom: 10rem;
+}
+
+.creations .btn {
+  position: absolute;
+  bottom: -8rem;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+
+.creations__header {
+  text-align: center;
+}
+
+.creations__heading {
+  color: #000;
+  text-transform: uppercase;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+}
+
 .creations-container {
   display: -ms-grid;
   display: grid;
   -ms-grid-columns: 1fr;
       grid-template-columns: 1fr;
   justify-items: center;
-  padding: 2rem;
+  position: relative;
   gap: 2rem;
 }
 
@@ -103,7 +143,7 @@ h2 {
 }
 
 .creations-container .creation:hover .image {
-  opacity: 0.3;
+  opacity: 0.2;
 }
 
 .creations-container .image {
@@ -134,12 +174,30 @@ h2 {
 }
 
 @media screen and (min-width: 768px) {
+  .creations .btn {
+    position: static;
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  .creations__header {
+    width: 100%;
+    -ms-flex-item-align: start;
+        align-self: flex-start;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
   .creations-container {
     max-width: 1120px;
     margin: 0 auto;
     -ms-grid-columns: (1fr)[4];
         grid-template-columns: repeat(4, 1fr);
-    gap: 3.2rem;
   }
   .creations-container .creation {
     height: 45rem;

@@ -32,6 +32,7 @@ h2 {
 }
 
 .btn {
+  white-space: nowrap;
   text-transform: uppercase;
   padding: 1rem 4rem;
   letter-spacing: 2px;
@@ -41,6 +42,7 @@ h2 {
   font-weight: 400;
   cursor: pointer;
   transition: all 0.2s ease-out;
+
   &:hover {
     background-color: $black-color;
     color: $white-color;
@@ -64,12 +66,39 @@ h2 {
     height: 2.5rem;
   }
 }
+.creations {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  position: relative;
+  margin-bottom: 10rem;
+  .btn {
+    position: absolute;
+    bottom: -8rem;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &__header {
+    text-align: center;
+  }
+  &__heading {
+    color: $black-color;
+    text-transform: uppercase;
+
+    font-weight: 400;
+    line-height: 1.1;
+    text-align: center;
+  }
+}
 .creations-container {
   display: grid;
   grid-template-columns: 1fr;
   justify-items: center;
-
-  padding: 2rem;
+  position: relative;
   gap: 2rem;
   .creation {
     width: 100%;
@@ -94,7 +123,7 @@ h2 {
       );
     }
     &:hover .image {
-      opacity: 0.3;
+      opacity: 0.2;
     }
   }
 
@@ -119,11 +148,26 @@ h2 {
 }
 
 @media screen and (min-width: 768px) {
+  .creations {
+    .btn {
+      position: static;
+      transform: translateX(0);
+    }
+    &__header {
+      width: 100%;
+      align-self: flex-start;
+      display: flex;
+      align-items: center;
+
+      justify-content: space-between;
+      // justify-content: ;
+    }
+  }
   .creations-container {
     max-width: 1120px;
     margin: 0 auto;
     grid-template-columns: repeat(4, 1fr);
-    gap: 3.2rem;
+
     .creation {
       height: 45rem;
       height: 100%;
