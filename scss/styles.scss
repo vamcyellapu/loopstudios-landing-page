@@ -249,3 +249,51 @@ h2 {
     }
   }
 }
+
+.hero {
+  width: 100%;
+  background-image: url(/images/mobile/image-hero.jpg);
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  &-container {
+    max-width: 1120px;
+    margin: 0 auto;
+    position: relative;
+    min-height: 100vh;
+  }
+  &__heading {
+    text-transform: uppercase;
+    position: absolute;
+    color: $white-color;
+    font-weight: 400;
+    // max-width: 11ch;
+    line-height: 1;
+
+    bottom: 50%;
+
+    left: 50%;
+
+    transform: translate(-50%, 50%);
+    border: 2px solid $white-color;
+    padding: 2rem;
+    max-width: 30rem;
+    padding-top: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .hero {
+    background-image: url(/images/desktop/image-hero.jpg);
+    &__heading {
+      bottom: 20%;
+      left: 0;
+      transform: none;
+      font-size: 7rem;
+      max-width: 65rem;
+      padding: 3rem;
+      padding-top: 4rem;
+    }
+  }
+}
